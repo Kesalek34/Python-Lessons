@@ -27,7 +27,7 @@ finalwithvat = final_total + vat
 print("customername: ", name)
 print(f"subtotal: R  {total:.2f}")
 print(f"discount: R {discount:.2f}")
-print(f"VAT: R:  {vat:.2f}")
+print(f"VAT: R:  {vat:.2f}") 
 print(f"final total: R , {finalwithvat:.2f}")
 
 
