@@ -1,28 +1,49 @@
-
 filename = "coffee.txt"
-print("Mindnight Coffee Roasters")
+print("Coffee Roasters")
 
-anotherrec = 'y'
+#This code will write the describtion of the coffee and also the quantity of the coffee in the file
 
-while anotherrec.lower() == 'y':
+anotherrecord = 'y'
+while anotherrecord.lower() == 'y':
+    try:
+        name = input("Enter the name of the coffee: ")
+        if not name.strip():
+            raise ValueError("Name cannot be empty.")
+        
 
-    description = input("Enter a description of the coffee: ")
-    quantity = float(input("Enter the quantity of coffee: "))
+        quantity = float(input("Enter the quantity of the coffee: "))
+        if quantity <= 0:
+            raise ValueError("Quantity must be greater than zero.")
+        
+        
+        file = open(filename, 'a') #that the file must allow us to add new records 
+        file.write(name + '\n')
+        file.write(str(quantity) + '\n')
+        file.close()
+        print("Record added successfully.")
+
+    except ValueError as e:
+        print(f" Invalid error: {e}") #Handles all iinvalid input errors
+
+    except IOError as e:
+        print(f"File error: {e}") #Handles all file related errors
+    
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}") #Handles any other unexpected errors
+
+        anotherrecord = input("Do you want to add another record? (y/n): ")
+
+print("All records are saved in the file.")
 
 
-    file = open(filename, 'a') # open file for appending
-
-    file.write(description + '\n') # write description to file
-
-    file.write(str(quantity) + '\n') # write quantity to file
-
-    file.close() # close the file
 
 
-    print("Record saved.")
-    anotherrec = input("Do you want to enter another record? (y/n): ")
 
-print("All records saved")
+
+
+    
+
+
 
 
 
