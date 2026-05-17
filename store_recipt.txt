@@ -1,0 +1,5 @@
+bread  |R15.5 X 2 = R31.00
+milk  |R18.0 X 3 = R54.00
+sugar  |R32.0 X 1 = R32.00
+rice  |R120.0 X 2 = R240.00
+eggs  |R45.0 X 3 = R135.00
